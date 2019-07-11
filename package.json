@@ -1,0 +1,24 @@
+{
+  "name": "faq-challenge",
+  "version": "1.0.0",
+  "description": "Simple api powered faq component",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "from-html": "^0.3.3",
+    "jsdom": "^15.1.1",
+    "mocha": "^6.1.4",
+    "parcel-bundler": "^1.12.3",
+    "sinon": "^7.3.2"
+  },
+  "dependencies": {
+    "mustache": "^3.0.1"
+  }
+}

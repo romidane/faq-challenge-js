@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FAQ accordion</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="o-container">
+      <h1 class="c-heading-alpha">FAQ accordion</h1>
+
+      <div id="app">Loading...</div>
+    </div>
+
+    <script id="template" type="x-tmpl-mustache">
+      <div id="accordion-group" class="c-accordion">
+        {{#data}}
+        <div class="c-accordion__item" data-accordion-item>
+          <h2 class="c-accordion__title">
+            <button
+              data-id="{{ id }}"
+              data-accordion-trigger
+              aria-expanded="{{open}}"
+              class="c-accordion__trigger u-clearfix"
+              aria-controls="section-{{id}}"
+              id="accordion-{{id}}"
+            >
+              <span class="c-accordion__text">
+                {{question}}
+              </span>
+              <span class="c-accordion__icon">[+]</span>
+            </button>
+          </h2>
+          <div
+            id="section-{{id}}"
+            role="region"
+            data-accordion-panel
+            aria-labelledby="accordion-{{id}}"
+            class="c-accordion__panel"
+            {{^open}}
+            aria-hidden="true"
+            {{/open}}
+          >
+            <p>{{answer}}</p>
+          </div>
+        </div>
+        {{/data}}
+      </div>
+    </script>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
